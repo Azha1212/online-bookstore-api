@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "Online Bookstore API",
+    "description": "Postman collection for the Online Bookstore API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Get all books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Hobbit\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"genre\": \"Fantasy\",\n  \"price\": 19.99,\n  \"publishedDate\": \"1937-09-21\",\n  \"inStock\": true\n}"
+            },
+            "url": "{{baseUrl}}/api/books"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a single book",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/:id"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a book",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Hobbit\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"genre\": \"Fantasy\",\n  \"price\": 21.99\n}"
+            },
+            "url": "{{baseUrl}}/api/books/:id"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a book",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/books/:id"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
